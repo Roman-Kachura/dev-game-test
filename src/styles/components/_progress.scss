@@ -1,0 +1,98 @@
+.progress {
+  display: grid;
+  grid-template-rows: 40px 40px 40px;
+  gap: 10px;
+  width: 900px;
+
+  &__stars {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+
+    &-item{
+      display: flex;
+      justify-content: end;
+      align-items: center;
+
+      .progress__stars-image{
+        transform: translateX(50%);
+      }
+
+      &:last-child {
+        color: red;
+        .progress__stars-image {
+          transform: translateX(0);
+        }
+      }
+    }
+
+  }
+
+  &__line {
+    display: grid;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 30px;
+    background: $progressLineColor;
+    overflow: hidden;
+
+
+    &-item {
+      height: 100%;
+      border-right: 1px solid rgba(0, 0, 0, .2);
+      position: relative;
+
+      &_done {
+        border-right-color: #000033;
+      }
+
+      &-wrapper {
+        height: 100%;
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $progressLineActiveColor;
+      }
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+
+  &__numbers {
+    width: 100%;
+    display: grid;
+    font-size: $progressNumberSize;
+    overflow: hidden;
+    position: relative;
+
+    &-item {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      position: relative;
+
+      &-text {
+        transform: translateX(50%);
+      }
+
+      &:first-child{
+        height: 100%;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      &:last-child {
+        .progress__numbers-item-text {
+          transform: translateX(0);
+        }
+      }
+    }
+  }
+}
