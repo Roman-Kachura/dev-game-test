@@ -7,8 +7,8 @@
       "games": [
         {
           "name": "Игра 1.1",
-          "bestResult": 25,
-          "isPlayed": false
+          "bestResult": 24,
+          "isPlayed": true
         }
       ]
     },
