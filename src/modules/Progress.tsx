@@ -1,17 +1,19 @@
 import { FC } from 'react';
-import { ProgressLine } from '../components/progress/ProgressLine';
-import { ProgressNumbers } from '../components/progress/ProgressNumbers';
-import { ProgressStars } from '../components/progress/ProgressStars';
+import { ProgressLine } from '../components/progress/line/ProgressLine';
+import { ProgressNumbers } from '../components/progress/numbers/ProgressNumbers';
+import { ProgressStars } from '../components/progress/stars/ProgressStars';
+import { TransformedResponseDTO } from '../types/response';
 
-export const Progress: FC = () => {
-  const games = 350;
-  const breakpoints = [0, 25, 50, 100, 200, 500, 1000, 4000];
+interface ProgressProps extends TransformedResponseDTO{
 
+}
+
+export const Progress: FC<ProgressProps> = ({transformedStages,totalResult}) => {
   return (
     <div className="progress">
-      <ProgressStars games={games} breakpoints={breakpoints}/>
-      <ProgressLine games={games} breakpoints={breakpoints}/>
-      <ProgressNumbers games={games} breakpoints={breakpoints}/>
+      <ProgressStars transformedStages={transformedStages} totalResult={totalResult}/>
+      <ProgressLine transformedStages={transformedStages} totalResult={totalResult}/>
+      <ProgressNumbers transformedStages={transformedStages} totalResult={totalResult}/>
     </div>
   )
 }

@@ -1,6 +1,7 @@
 @import "variables";
 @import './components/app';
 @import './components/progress';
+@import './components/controller';
 
 *, *:after, *:before {
   box-sizing: border-box;
@@ -24,4 +25,13 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+input{
+  outline: none;
+}
+
+button{
+  outline: none;
+  cursor: pointer;
 }

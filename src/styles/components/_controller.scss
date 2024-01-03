@@ -1,0 +1,76 @@
+.controller {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+
+  &__information {
+    font-weight: 400;
+    color: teal;
+
+    &_game {
+      color: orange;
+    }
+
+    &_stage {
+      color: $progressLineActiveColor;
+    }
+
+    &_all {
+      color: darkred;
+    }
+  }
+
+  &__result {
+    display: flex;
+    gap: 5px;
+
+    &-input_error {
+      color: red;
+      border-color: red;
+    }
+  }
+
+  &__status {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 5px;
+
+    input[type=checkbox] {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  &__btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: $progressLineActiveColor;
+    color: #fff;
+    text-transform: uppercase;
+    transition: .3s background-color;
+
+    &:focus-visible,
+    &:hover {
+      background: #2102a4;
+    }
+
+    &:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+  }
+}
+
+@media screen and (max-width: 569px) {
+  .controller {
+    &__result {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+}
