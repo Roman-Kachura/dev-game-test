@@ -1,9 +1,8 @@
 import axios, { AxiosResponse } from 'axios';
 import { StageDTO } from '../../types/stages';
-import env from "react-dotenv";
 
 const $api = axios.create({
-  baseURL: env.API_URL
+  baseURL: process.env.REACT_APP_API_URL
 });
 
 export const api = {
