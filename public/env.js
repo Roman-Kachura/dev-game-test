@@ -1,3 +1,3 @@
 window.env = {
-  "API_URL": "http://localhost:3030"
+  "API_URL": "https://dev-game-test.netlify.app"
 };
